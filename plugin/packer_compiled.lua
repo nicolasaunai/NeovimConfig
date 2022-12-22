@@ -74,6 +74,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["ChatGPT.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fchatgpt\frequire\0" },
+    loaded = true,
+    path = "/home/aunai/.local/share/nvim/site/pack/packer/start/ChatGPT.nvim",
+    url = "https://github.com/jackMort/ChatGPT.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/aunai/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -109,10 +115,20 @@ _G.packer_plugins = {
     path = "/home/aunai/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/aunai/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/aunai/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/aunai/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -124,11 +140,21 @@ _G.packer_plugins = {
     path = "/home/aunai/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  melange = {
+    loaded = true,
+    path = "/home/aunai/.local/share/nvim/site/pack/packer/start/melange",
+    url = "https://github.com/savq/melange"
+  },
   neoformat = {
     config = { "\27LJ\2\n×\1\0\0\5\0\a\0\t6\0\0\0009\0\1\0009\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\3B\0\3\1K\0\1\0\fpattern\1\0\1\fcommand\14Neoformat\1\16\0\0\v*.json\n*.yml\v*.yaml\t*.js\t*.ts\n*.lua\n*.cpp\n*.hpp\n*.cxx\n*.hxx\t*.cc\b*.c\b*.h\t*.rs\t*.py\1\3\0\0\16BufWritePre\16TextChanged\24nvim_create_autocmd\bapi\bvim\0" },
     loaded = true,
     path = "/home/aunai/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/aunai/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -184,14 +210,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
 -- Config for: neoformat
 time([[Config for neoformat]], true)
 try_loadstring("\27LJ\2\n×\1\0\0\5\0\a\0\t6\0\0\0009\0\1\0009\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\3B\0\3\1K\0\1\0\fpattern\1\0\1\fcommand\14Neoformat\1\16\0\0\v*.json\n*.yml\v*.yaml\t*.js\t*.ts\n*.lua\n*.cpp\n*.hpp\n*.cxx\n*.hxx\t*.cc\b*.c\b*.h\t*.rs\t*.py\1\3\0\0\16BufWritePre\16TextChanged\24nvim_create_autocmd\bapi\bvim\0", "config", "neoformat")
 time([[Config for neoformat]], false)
+-- Config for: ChatGPT.nvim
+time([[Config for ChatGPT.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fchatgpt\frequire\0", "config", "ChatGPT.nvim")
+time([[Config for ChatGPT.nvim]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
+time([[Config for rose-pine]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

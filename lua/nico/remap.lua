@@ -5,10 +5,10 @@ vim.keymap.set("n", "<leader>pf", vim.cmd.Ex)
 
 
 -- splits
-vim.keymap.set("n", "<C-j>", "<C-W>j")
-vim.keymap.set("n", "<C-k>", "<C-W>k")
-vim.keymap.set("n", "<C-h>", "<C-W>h")
-vim.keymap.set("n", "<C-l>", "<C-W>l")
+vim.keymap.set("n", "<C-j>", "<C-W>j", {noremap=true})
+vim.keymap.set("n", "<C-k>", "<C-W>k", {noremap=true})
+vim.keymap.set("n", "<C-h>", "<C-W>h", {noremap=true})
+vim.keymap.set("n", "<C-l>", "<C-W>l", {noremap=true})
 vim.keymap.set("n","<leader>cl",":close<CR>",{noremap=true})
 vim.keymap.set("n","<leader>v",":vs<CR><C-w>l",{noremap=true})
 vim.keymap.set("n","<leader>h",":sp<CR>",{noremap=true})

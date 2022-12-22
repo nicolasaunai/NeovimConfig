@@ -23,6 +23,9 @@ use({
 
 -- parsers for color highlighting
 use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
+ --
+use { "ellisonleao/gruvbox.nvim" }
+use ("savq/melange")
 
 -- Git
 use('tpope/vim-fugitive')
@@ -87,6 +90,28 @@ use({
 
 
 
+
+  -- Status line ----
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+
+
+--- chatGPT
+use({
+  "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup({
+        -- optional configuration
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+})
 
 
 end)
