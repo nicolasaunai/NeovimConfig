@@ -17,7 +17,7 @@ use({
     'rose-pine/neovim',
     as = 'rose-pine',
     config = function()
-        vim.cmd('colorscheme rose-pine')
+        vim.cmd('colorscheme melange')
     end
 })
 
@@ -113,5 +113,7 @@ use({
     }
 })
 
+-- indentation line
+use ("lukas-reineke/indent-blankline.nvim")
 
 end)
