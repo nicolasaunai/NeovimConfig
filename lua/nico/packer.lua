@@ -26,6 +26,7 @@ use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
  --
 use { "ellisonleao/gruvbox.nvim" }
 use ("savq/melange")
+use ("sainnhe/sonokai")
 
 -- Git
 use('tpope/vim-fugitive')

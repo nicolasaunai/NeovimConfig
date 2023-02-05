@@ -20,6 +20,8 @@ vim.opt.relativenumber=true
 vim.opt.wildmenu = true
 vim.opt.wildmode="longest,list"
 vim.opt.wildignore=vim.opt.wildignore+"*.a,*.o,*.pyc,**/coverage,**/.git/"
+-- vim.opt.guicursor="n-v-c:block,i-ci-v:ver100-Cursor"
+vim.opt.guicursor="n-v-c:block,o:hor50,i-ci:block,r-cr:hor30,sm:block,a:blinkon0"
 
 vim.opt.tabstop=8
 vim.opt.shiftwidth=4
