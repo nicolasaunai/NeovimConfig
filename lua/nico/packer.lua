@@ -38,16 +38,24 @@ use {
   requires = {
     -- LSP Support
     {'neovim/nvim-lspconfig'},
+
+    -- mason is a manager for lsp, linters, dap, formatters
+    -- it allows to install, update, etc. them easily
     {'williamboman/mason.nvim'},
+
+    -- mason-lspconfig is a bridge between mason and mason-lspconfig
+    -- helps them working together
     {'williamboman/mason-lspconfig.nvim'},
 
     -- Autocompletion
-    {'hrsh7th/nvim-cmp'},
-    {'hrsh7th/cmp-buffer'},
-    {'hrsh7th/cmp-path'},
-    {'saadparwaiz1/cmp_luasnip'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/cmp-nvim-lua'},
+
+    -- A completion engine plugin for neovim written in Lua.
+    {'hrsh7th/nvim-cmp'},          -- Completion sources are installed from external repositories and "sourced".
+    {'hrsh7th/cmp-buffer'},        -- nvim-cmp source for buffer words.
+    {'hrsh7th/cmp-path'},          -- nvim-cmp source for filesystem paths.
+    {'saadparwaiz1/cmp_luasnip'},  -- luasnip completion source for nvim-cmp
+    {'hrsh7th/cmp-nvim-lsp'},      -- nvim-cmp source for neovim's built-in language server client.
+    {'hrsh7th/cmp-nvim-lua'},      -- nvim-cmp source for neovim Lua API.
 
     -- Snippets
     {'L3MON4D3/LuaSnip'},
@@ -66,7 +74,8 @@ use {
 use({
     "sbdchd/neoformat",
     config = function()
-      vim.api.nvim_create_autocmd({ "BufWritePre", "TextChanged" }, {
+      --vim.api.nvim_create_autocmd({ "BufWritePre", "TextChanged" }, {
+      vim.api.nvim_create_autocmd({ "BufWritePre"}, {
         pattern = {
           "*.json",
           "*.yml",
