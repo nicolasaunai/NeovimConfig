@@ -21,7 +21,7 @@ use({
     end
 })
 
--- parsers for color highlighting
+-- parsers for color highlighting-use
 use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
  --
 use { "ellisonleao/gruvbox.nvim" }
