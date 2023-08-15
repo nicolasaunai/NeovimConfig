@@ -124,6 +124,8 @@ use({
     }
 })
 
+use("madox2/vim-ai")
+
 -- indentation line
 use ("lukas-reineke/indent-blankline.nvim")
 
