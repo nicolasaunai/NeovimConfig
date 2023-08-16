@@ -1,8 +1,7 @@
 
--- this file is 01-cmp because it must be loaded
--- after 00-lsp.lua, since lsp-zero already defines presets
 
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero')
+lsp.extend_cmp()
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
@@ -131,7 +130,7 @@ formatting = {
       -- for instance we will not see any 'Snippet' if 'luasnip' is not
       -- set as a source.
       local short_name = {
-        nvim_lsp = 'LSP',
+        nvim_lsp = 'LSPSSS',
         nvim_lua = 'nvim',
         luasnip  = 'Snippet' ,
         buffer   = 'Buffer',

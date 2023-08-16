@@ -1,16 +1,38 @@
+
+-- this file configures plugins that come with lsp-zero
+-- cmp is treated in a dedicated file cmp.lua
+
 local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
+-- we need manage_nvim_cmp=false otherwise, since lsp.lua
+-- is loaded after cmp.lua (alphabetical order) this file
+-- will erase any conf I put in cmp.lua
+-- lsp.preset('recommended') 
+lsp.preset({name='recommended', manage_nvim_cmp=false})
 lsp.setup()
 
+
+--  DIAGNOSTICS CONFIG FROM NVIM-LSPCONFIG --- https://github.com/neovim/nvim-lspconfig
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = {
+    source = "always",  -- Or "if_many"
+    prefix = '●', -- Could be '■', '▎', 'x'
+  },
   signs = true,
   update_in_insert = false,
   underline = true,
   severity_sort = false,
-  float = true,
+  float = {source="always"},
 })
+-- Global mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+-- ----------------------------------------------------------------------------
+
 
   local nmap = function(keys, func, desc)
     if desc then
@@ -51,4 +73,23 @@ vim.diagnostic.config({
   end, '[W]orkspace [L]ist Folders')
 
 
+  -- LSP servers installed with MASON setup from NVIM-LSPCONFIG  --------------
+  -- server configurations can be found here:
+  --    https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+  require'lspconfig'.clangd.setup{
+      filetypes={ "c", "cpp","hpp","h", "objc", "objcpp", "cuda", "proto" },
+      root_dir=require('lspconfig').util.root_pattern(
+          '.clangd',
+          '.clang-tidy',
+          '.clang-format',
+          'compile_commands.json',
+          'compile_flags.txt',
+          'configure.ac',
+          '.git'
+        )}
 
+require'lspconfig'.pyright.setup{filetypes={ "python","py" }}
+
+require'lspconfig'.cmake.setup{}
+
+-------------------------------------------------------------------------------

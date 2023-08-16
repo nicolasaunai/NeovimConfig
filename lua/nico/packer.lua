@@ -35,7 +35,7 @@ use('f-person/git-blame.nvim')
 
 -- all these plugins are related to LSP
 use {
-  'VonHeikemen/lsp-zero.nvim',
+  'VonHeikemen/lsp-zero.nvim',branch = 'v2.x',
   requires = {
     -- LSP Support
     {'neovim/nvim-lspconfig'},
