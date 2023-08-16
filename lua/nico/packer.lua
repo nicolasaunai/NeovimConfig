@@ -64,6 +64,7 @@ use {
   }
 }
 
+----------- tree explorer
 use {
   'nvim-tree/nvim-tree.lua',
   requires = {
@@ -71,7 +72,12 @@ use {
   },
   tag = 'nightly' -- optional, updated every week. (see issue #1193)
 }
+--------------------
 
+
+
+
+-------- code formatting ------------
 use({
     "sbdchd/neoformat",
     config = function()
@@ -98,6 +104,7 @@ use({
       })
     end,
   })
+  --------------------------------
 
 
 
@@ -128,5 +135,9 @@ use("madox2/vim-ai")
 
 -- indentation line
 use ("lukas-reineke/indent-blankline.nvim")
+
+use("https://github.com/github/copilot.vim")
+
+
 
 end)
