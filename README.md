@@ -43,7 +43,7 @@
 
 - `f`              : Fuzzy file filter
 - `F`              : close the file filter
-- `<C-k>`          : display file informations
+- `<C-K>`          : display file informations
 - `H`              : show/hide **H**idden files (.files)
 - `E`              : **E**xpand all
 - `W`              : Collapse all
@@ -99,10 +99,11 @@
 - `<leader>h`       : *H*orizontal split
 
 
-## NeoVim Config
+## NeoVim
 
 - `<leader>ev`      : open neovim config directory
 - `<leader>sv`      : source root init.lua config file
+- `<leader>sm`      : fuzzy search in keymaps
 
 
 
