@@ -39,3 +39,33 @@ vim.keymap.set("n", "ev", "<cmd>e ~/.config/nvim/<cr>", {noremap=true})
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 vim.keymap.set('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
 vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+
+
+
+
+-- DAP debugger remaps
+local ok,dap = pcall(require, "dap")
+if not ok then
+    print("dap not found")
+    return
+end
+
+vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, {desc = "Toggle [B]reakpoint"})
+vim.keymap.set('n', '<leader>dl', dap.list_breakpoints, {desc = "[L]ist Breakpoints"})
+vim.keymap.set('n', '<leader>dC', dap.clear_breakpoints, {desc = "[C]lear Breakpoints"})
+vim.keymap.set('n', '<leader>dr', dap.continue, {desc = "[R]un"})
+vim.keymap.set('n', '<leader>drs', dap.continue, {desc = "[R]e[S]tart"})
+vim.keymap.set('n', '<leader>dc', dap.continue, {desc = "[C]ontinue"})
+vim.keymap.set('n', '<leader>dt', dap.terminate, {desc = "[T]erminate"})
+vim.keymap.set('n', '<leader>do', dap.step_over, {desc = "[S]tep [O]ver"})
+vim.keymap.set('n', '<leader>dO', dap.step_over, {desc = "[S]tep [O]ut"})
+vim.keymap.set('n', '<leader>di', dap.step_into, {desc = "[S]tep [I]nto"})
+vim.keymap.set('n', '<leader>dB', dap.step_back, {desc = "[S]tep [B]ack"})
+vim.keymap.set('n', '<leader>dd', dap.down, {desc = "Step [D]own"})
+vim.keymap.set('n', '<leader>du', dap.up, {desc = "Step [U]p"})
+vim.keymap.set('n', '<leader>dtc', dap.run_to_cursor, {desc = "run [T]o [C]ursor"})
+
+
+
+
+

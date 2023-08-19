@@ -136,8 +136,15 @@ use("madox2/vim-ai")
 -- indentation line
 use ("lukas-reineke/indent-blankline.nvim")
 
+
+-- copilot
 use("https://github.com/github/copilot.vim")
 
+
+
+-- debugger
+use("mfussenegger/nvim-dap")
+use("mfussenegger/nvim-dap-python")
 
 
 end)
