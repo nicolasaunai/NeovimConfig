@@ -73,19 +73,22 @@ end
 
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
-    print("dap session init");
+--    print("dap session init");
   dapui.open()
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
-    print("dap session terminated");
+--    print("dap session terminated");
   dapui.close()
 end
+
+-- the following is for https://github.com/nicolasaunai/NeovimConfig/issues/1
+-- and https://github.com/rcarriga/nvim-dap-ui/issues/147
 dap.listeners.before.disconnect["dapui_config"] = function()
-print("dap disconnect")
+--print("dap disconnect")
     dapui.close() 
 end
 dap.listeners.before.event_exited["dapui_config"] = function()
-    print("dap session exited");
+--    print("dap session exited");
   dapui.close()
 end
 dapui.setup()
