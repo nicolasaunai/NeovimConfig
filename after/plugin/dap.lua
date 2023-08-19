@@ -36,18 +36,17 @@ dap.configurations.cpp = {
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
   },
---  setupCommands = {  
---  { 
---     text = '-enable-pretty-printing',
---     description =  'enable pretty printing',
---     ignoreFailures = false 
---  },
---},
+  {
+     text = '-enable-pretty-printing',
+     description =  'enable pretty printing',
+     ignoreFailures = false 
+  },
 }
 
 dap.configurations.c = dap.configurations.cpp
 
 
+-- dap-python : https://github.com/mfussenegger/nvim-dap-python
 dap_python_ok, dap_python = pcall(require, "dap-python")
 if not dap_python_ok then
     print("dap-python not found")
@@ -55,6 +54,10 @@ if not dap_python_ok then
 end
 
 dap_python.setup('~/.virtualenvs/debugpy/bin/python')
+
+
+
+require("dapui").setup()
 
 
 

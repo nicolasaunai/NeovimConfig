@@ -43,7 +43,7 @@ vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 
 
--- DAP debugger remaps
+-- DAP debugger remaps --------------------------------------------------------
 local ok,dap = pcall(require, "dap")
 if not ok then
     print("dap not found")
@@ -65,7 +65,19 @@ vim.keymap.set('n', '<leader>dd', dap.down, {desc = "Step [D]own"})
 vim.keymap.set('n', '<leader>du', dap.up, {desc = "Step [U]p"})
 vim.keymap.set('n', '<leader>dtc', dap.run_to_cursor, {desc = "run [T]o [C]ursor"})
 
+local dap, dapui = require("dap"), require("dapui")
+require("dapui").setup()
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
 
+-------------------------------------------------------------------------------
 
 
 
