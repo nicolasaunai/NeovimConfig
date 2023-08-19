@@ -44,6 +44,7 @@ vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 
 -- DAP debugger remaps --------------------------------------------------------
+-- see after/plugin/dap.lua for config
 local ok,dap = pcall(require, "dap")
 if not ok then
     print("dap not found")

@@ -2,6 +2,35 @@
 
 ![image](https://user-images.githubusercontent.com/3200931/210149073-61275f5b-c3bf-4b58-82ea-944da04e35d7.png)
 
+# Installation
+
+
+
+```bash
+sudo dnf install neovim
+`git clone https://github.com/nicolasaunai/neovimconf/ ~/.config/nvim`
+`cd ~/.config/nvim/lua/nico`
+`nvim packer.lua`
+```
+
+then in neovim, source the file `packer.lua` with  `:so`
+and run `PackerSync` to install all plugins
+
+
+Then run `:Mason` and install:
+
+
+- clang-format
+- clangd
+- cmake-language-server
+- cpptools
+- debugpy
+- html-lsp
+- json-lsp
+- pylint
+- pyright
+- texlab
+
 
 
 
