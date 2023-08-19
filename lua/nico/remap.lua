@@ -65,17 +65,30 @@ vim.keymap.set('n', '<leader>dd', dap.down, {desc = "Step [D]own"})
 vim.keymap.set('n', '<leader>du', dap.up, {desc = "Step [U]p"})
 vim.keymap.set('n', '<leader>dtc', dap.run_to_cursor, {desc = "run [T]o [C]ursor"})
 
-local dap, dapui = require("dap"), require("dapui")
-require("dapui").setup()
+local dapui_ok, dapui = pcall(require, "dapui")
+if not dapui_ok then
+    print("dapui not found")
+    return
+end
+
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
+    print("dap session init");
   dapui.open()
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
+    print("dap session terminated");
   dapui.close()
+end
+dap.listeners.before.disconnect["dapui_config"] = function()
+print("dap disconnect")
+    dapui.close() 
 end
 dap.listeners.before.event_exited["dapui_config"] = function()
+    print("dap session exited");
   dapui.close()
 end
+dapui.setup()
 
 -------------------------------------------------------------------------------
 

@@ -146,7 +146,7 @@ use("https://github.com/github/copilot.vim")
 use("mfussenegger/nvim-dap")
 use("mfussenegger/nvim-dap-python")
 use("rcarriga/nvim-dap-ui")
-use("theHamsta/nvim-dap-virtual-text")
+-- use("theHamsta/nvim-dap-virtual-text")
 
 
 end)

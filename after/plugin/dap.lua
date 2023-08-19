@@ -46,7 +46,8 @@ dap.configurations.cpp = {
 dap.configurations.c = dap.configurations.cpp
 
 
--- dap-python : https://github.com/mfussenegger/nvim-dap-python
+-- PYTHON
+-- : https://github.com/mfussenegger/nvim-dap-python
 dap_python_ok, dap_python = pcall(require, "dap-python")
 if not dap_python_ok then
     print("dap-python not found")
@@ -57,8 +58,12 @@ dap_python.setup('~/.virtualenvs/debugpy/bin/python')
 
 
 
-require("dapui").setup()
 
+-- this comes from https://github.com/theHamsta/nvim-dap-virtual-text
+-- to have values of variables in the editor
+--require("nvim-dap-virtual-text").setup {
+--  commented = true,
+--}
 
 
 
