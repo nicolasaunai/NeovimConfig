@@ -66,6 +66,9 @@ Then run `:Mason` and install:
 - `<Ctrl-b>`       : Go to the previous placeholder in the snippet.
 - `<Tab>`          : Enables completion when the cursor is inside a word. If the completion menu is visible it will navigate to the next item in the list.
 - `<Shift-Tab>`    : When the completion menu is visible navigate to the previous item in the list.
+- `<Shift-Tab>`    : Accept Copilot suggestion
+- `<C-j>`          : Next copilot suggestion
+- `<C-k>`          : Previous copilot suggestion
 
 
 ## NVimTree
