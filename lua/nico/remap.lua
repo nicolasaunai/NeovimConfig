@@ -37,7 +37,7 @@ vim.keymap.set("n", "ev", "<cmd>e ~/.config/nvim/<cr>", {noremap=true})
 
 -- nvimtree-- NvimTree
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-vim.keymap.set('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
+vim.keymap.set('n', '<leader>rf', ':NvimTreeRefresh<CR>')       -- refresh
 vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 

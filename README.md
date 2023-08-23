@@ -105,7 +105,7 @@ Then run `:Mason` and install:
 - `<leader>f`       : fuzzy **F**ind file in workspace
 - `<C-p>`           : fuzzy **F**ind file in git repository
 - `<leader><leader>`: list existing **B**uffers 
-- `<leader>?`       : list recently opened files
+- `<leader>sr`      : [S]earch [R]ecently opened files
 - `<leader>rn`      : **R**e**N**ame  current buffer
 - `<leader>wa`      : **W**orkspace **A**dd folder 
 - `<leader>wr`      : **W**orkspace **R**emove folder 
