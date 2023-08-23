@@ -94,10 +94,11 @@ Then run `:Mason` and install:
 
 ## git
 
-- `<leader>gs`     : **G**it **S**tatus
-- `<leader>gb`     : **G**it **B**lame
-- `<leader>lgc`    : **L**ist **G**it **C**ommits
-- `<leader>lgb`    : **L**ist **G**it **B**ranches
+- `<leader>gs`     : [G]it [S]tatus
+- `<leader>gb`     : [G]it [B]lame
+- `<leader>gc`     : [G]it **C**ommit
+- `<leader>lgc`    : [L]ist [G]it **C**ommits
+- `<leader>lgb`    : [L]ist [G]it **B**ranches
 
 
 ## File & Buffers
