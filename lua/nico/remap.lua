@@ -136,3 +136,10 @@ set('n', '<leader>sm', builtin.keymaps, { desc = '[S]earch [M]aps' })
 
 -- end telescope remaps -----------------------------------------------------------
 
+
+
+
+-- git fugitive remaps -----------------------------------------------------------
+vim.keymap.set("n", "<leader>gs", ":Git status<CR>")
+vim.keymap.set("n", "<leader>gb", ":Git blame<CR>")
+-- endgit fugitive remaps -----------------------------------------------------------
