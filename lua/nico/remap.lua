@@ -1,44 +1,48 @@
 
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pf", vim.cmd.Ex)
+
+local set = vim.keymap.set
+
+
+set("n", "<leader>pf", vim.cmd.Ex)
 
 
 -- splits
-vim.keymap.set("n", "<C-j>", "<C-W>j", {noremap=true})
-vim.keymap.set("n", "<C-k>", "<C-W>k", {noremap=true})
-vim.keymap.set("n", "<C-h>", "<C-W>h", {noremap=true})
-vim.keymap.set("n", "<C-l>", "<C-W>l", {noremap=true})
-vim.keymap.set("n","<leader>cl",":close<CR>",{noremap=true})
-vim.keymap.set("n","<leader>v",":vs<CR><C-w>l",{noremap=true})
-vim.keymap.set("n","<leader>h",":sp<CR>",{noremap=true})
+set("n", "<C-j>", "<C-W>j", {noremap=true})
+set("n", "<C-k>", "<C-W>k", {noremap=true})
+set("n", "<C-h>", "<C-W>h", {noremap=true})
+set("n", "<C-l>", "<C-W>l", {noremap=true})
+set("n","<leader>cl",":close<CR>",{noremap=true})
+set("n","<leader>v",":vs<CR><C-w>l",{noremap=true})
+set("n","<leader>h",":sp<CR>",{noremap=true})
 
 -- making adjusting split sizes a bit more friendly
-vim.keymap.set("n", "<C-Left>", ":vertical resize +3<CR>", {silent=true})
-vim.keymap.set("n", "<C-Right>", ":vertical resize -3<CR>", {silent=true})
-vim.keymap.set("n", "<C-Up>", ":resize +3<CR>", {silent=true})
-vim.keymap.set("n", "<C-Down>", ":resize -3<CR>", {silent=true})
+set("n", "<C-Left>", ":vertical resize +3<CR>", {silent=true})
+set("n", "<C-Right>", ":vertical resize -3<CR>", {silent=true})
+set("n", "<C-Up>", ":resize +3<CR>", {silent=true})
+set("n", "<C-Down>", ":resize -3<CR>", {silent=true})
 
 
-vim.keymap.set("n", "<leader>th", "<C-w>t<C-w>H")
-vim.keymap.set("n", "<leader>tk", "<C-w>t<C-w>K")
-vim.keymap.set("n", "<Leader>y", '"+y', {silent=true})
+set("n", "<leader>th", "<C-w>t<C-w>H")
+set("n", "<leader>tk", "<C-w>t<C-w>K")
+set("n", "<Leader>y", '"+y', {silent=true})
 
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", {noremap=true})
-vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>",{noremap=true})
+set("n", "<Tab>", ":bnext<CR>", {noremap=true})
+set("n", "<S-Tab>", ":bprevious<CR>",{noremap=true})
 
-vim.keymap.set("n", "<leader>cc", "I//<Esc>", {noremap=true})
---vim.keymap.set("n", "<leader>uc", "vim.cmd(svim.regex())", {noremap=true})
+set("n", "<leader>cc", "I//<Esc>", {noremap=true})
+--set("n", "<leader>uc", "vim.cmd(svim.regex())", {noremap=true})
 
 
-vim.keymap.set("n", "sv", "<cmd>source ~/.config/nvim/init.lua<cr>", {noremap=true})
-vim.keymap.set("n", "ev", "<cmd>e ~/.config/nvim/<cr>", {noremap=true})
+set("n", "sv", "<cmd>source ~/.config/nvim/init.lua<cr>", {noremap=true})
+set("n", "ev", "<cmd>e ~/.config/nvim/<cr>", {noremap=true})
 
 
 -- nvimtree-- NvimTree
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-vim.keymap.set('n', '<leader>rf', ':NvimTreeRefresh<CR>')       -- refresh
-vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+set('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
+set('n', '<leader>rf', ':NvimTreeRefresh<CR>')       -- refresh
+set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 
 
@@ -51,20 +55,20 @@ if not ok then
     return
 end
 
-vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, {desc = "Toggle [B]reakpoint"})
-vim.keymap.set('n', '<leader>dl', dap.list_breakpoints, {desc = "[L]ist Breakpoints"})
-vim.keymap.set('n', '<leader>dC', dap.clear_breakpoints, {desc = "[C]lear Breakpoints"})
-vim.keymap.set('n', '<leader>dr', dap.continue, {desc = "[R]un"})
-vim.keymap.set('n', '<leader>drs', dap.continue, {desc = "[R]e[S]tart"})
-vim.keymap.set('n', '<leader>dc', dap.continue, {desc = "[C]ontinue"})
-vim.keymap.set('n', '<leader>dt', dap.terminate, {desc = "[T]erminate"})
-vim.keymap.set('n', '<leader>do', dap.step_over, {desc = "[S]tep [O]ver"})
-vim.keymap.set('n', '<leader>dO', dap.step_over, {desc = "[S]tep [O]ut"})
-vim.keymap.set('n', '<leader>di', dap.step_into, {desc = "[S]tep [I]nto"})
-vim.keymap.set('n', '<leader>dB', dap.step_back, {desc = "[S]tep [B]ack"})
-vim.keymap.set('n', '<leader>dd', dap.down, {desc = "Step [D]own"})
-vim.keymap.set('n', '<leader>du', dap.up, {desc = "Step [U]p"})
-vim.keymap.set('n', '<leader>dtc', dap.run_to_cursor, {desc = "run [T]o [C]ursor"})
+set('n', '<leader>db', dap.toggle_breakpoint, {desc = "Toggle [B]reakpoint"})
+set('n', '<leader>dl', dap.list_breakpoints, {desc = "[L]ist Breakpoints"})
+set('n', '<leader>dC', dap.clear_breakpoints, {desc = "[C]lear Breakpoints"})
+set('n', '<leader>dr', dap.continue, {desc = "[R]un"})
+set('n', '<leader>drs', dap.continue, {desc = "[R]e[S]tart"})
+set('n', '<leader>dc', dap.continue, {desc = "[C]ontinue"})
+set('n', '<leader>dt', dap.terminate, {desc = "[T]erminate"})
+set('n', '<leader>do', dap.step_over, {desc = "[S]tep [O]ver"})
+set('n', '<leader>dO', dap.step_over, {desc = "[S]tep [O]ut"})
+set('n', '<leader>di', dap.step_into, {desc = "[S]tep [I]nto"})
+set('n', '<leader>dB', dap.step_back, {desc = "[S]tep [B]ack"})
+set('n', '<leader>dd', dap.down, {desc = "Step [D]own"})
+set('n', '<leader>du', dap.up, {desc = "Step [U]p"})
+set('n', '<leader>dtc', dap.run_to_cursor, {desc = "run [T]o [C]ursor"})
 
 local dapui_ok, dapui = pcall(require, "dapui")
 if not dapui_ok then
@@ -97,4 +101,38 @@ dapui.setup()
 -------------------------------------------------------------------------------
 
 
+
+
+-- telescope remaps -----------------------------------------------------------
+
+local ok_builtin, builtin = pcall(require,'telescope.builtin')
+if not ok_builtin then
+    print("telescope.ok_builtin not found")
+  return
+end
+
+
+set('n', '<leader>f', builtin.find_files, {})
+set('n', '<C-p>', builtin.git_files, {})
+
+
+set('n', '<leader>sr', builtin.oldfiles, { desc = '[S]earch [R]ecently opened files' })
+set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer]' })
+
+set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+set('n', '<leader>sm', builtin.keymaps, { desc = '[S]earch [M]aps' })
+
+-- end telescope remaps -----------------------------------------------------------
 
