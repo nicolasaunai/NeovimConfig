@@ -152,19 +152,20 @@ set('n', '<leader>lds', tlscp_builtin.treesitter                   , {desc = 'Tr
 
 
 -- lsp remaps -----------------------------------------------------------
-set('n', 'gI'         , vim.lsp.buf.implementation  , {desc = '[G]oto [I]mplementation'})
-set('n', '<leader>D'  , vim.lsp.buf.type_definition , {desc = 'Type [D]efinition'})
-set('n', '<leader>r'  , vim.lsp.buf.rename          , {desc =  '[R]e[n]ame'})
-set('n', '<leader>ca' , vim.lsp.buf.code_action     , {desc =  '[C]ode [A]ction'})
+local vlb = vim.lsp.buf
+set('n', 'gI'         , vlb.implementation  , {desc = '[G]oto [I]mplementation'})
+set('n', '<leader>D'  , vlb.type_definition , {desc = 'Type [D]efinition'})
+set('n', '<leader>r'  , vlb.rename          , {desc =  '[R]e[n]ame'})
+set('n', '<leader>ca' , vlb.code_action     , {desc =  '[C]ode [A]ction'})
 
 -- Lesser used LSP functionality
-set('n', 'gD'         , vim.lsp.buf.declaration            , { desc = '[G]oto [D]eclaration'})
-set('n', '<leader>wa' , vim.lsp.buf.add_workspace_folder   , { desc = '[W]orkspace [A]dd Folder'})
-set('n', '<leader>wr' , vim.lsp.buf.remove_workspace_folder, { desc = '[W]orkspace [R]emove Folder'})
-set('n', '<leader>wl' , function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { desc =  '[W]orkspace [L]ist Folders'})
+set('n', 'gD'         , vlb.declaration            , { desc = '[G]oto [D]eclaration'})
+set('n', '<leader>wa' , vlb.add_workspace_folder   , { desc = '[W]orkspace [A]dd Folder'})
+set('n', '<leader>wr' , vlb.remove_workspace_folder, { desc = '[W]orkspace [R]emove Folder'})
+set('n', '<leader>wl' , function() print(vim.inspect(vlb.list_workspace_folders())) end, { desc =  '[W]orkspace [L]ist Folders'})
 
-set('n', 'K'        , vim.lsp.buf.hover         , {desc = 'Hover Documentation'})
-set('n', '<leader>d', vim.lsp.buf.signature_help, {desc = 'Signature Documentation'})
+set('n', 'K'        , vlb.hover         , {desc = 'Hover Documentation'})
+set('n', '<leader>d', vlb.signature_help, {desc = 'Signature Documentation'})
 -- end lsp remaps -----------------------------------------------------------
 
 
