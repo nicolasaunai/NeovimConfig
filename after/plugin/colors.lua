@@ -5,5 +5,6 @@ function ColorMyPencils(color)
     vim.o.background = "dark" -- or "light" for light mode
 end
 
-ColorMyPencils("sonokai")
-vim.g.sonokai_style="expresso"
+ColorMyPencils("rose-pine-moon")
+--ColorMyPencils("sonokai")
+--vim.g.sonokai_style="expresso"

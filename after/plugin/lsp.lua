@@ -29,14 +29,14 @@ vim.diagnostic.config({
 -- ----------------------------------------------------------------------------
 
 
-
+local lspcf = require('lspconfig')
 
 
 
   -- LSP servers installed with MASON setup from NVIM-LSPCONFIG  --------------
   -- server configurations can be found here:
   --    https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-  require'lspconfig'.clangd.setup{
+  lspcf.clangd.setup{
       filetypes={ "c", "cpp","hpp","h", "objc", "objcpp", "cuda", "proto" },
       root_dir=require('lspconfig').util.root_pattern(
           '.clangd',

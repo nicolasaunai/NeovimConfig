@@ -154,7 +154,7 @@ set('n', '<leader>lds', tlscp_builtin.treesitter                   , {desc = 'Tr
 -- lsp remaps -----------------------------------------------------------
 set('n', 'gI'         , vim.lsp.buf.implementation  , {desc = '[G]oto [I]mplementation'})
 set('n', '<leader>D'  , vim.lsp.buf.type_definition , {desc = 'Type [D]efinition'})
-set('n', '<leader>rn' , vim.lsp.buf.rename          , {desc =  '[R]e[n]ame'})
+set('n', '<leader>r'  , vim.lsp.buf.rename          , {desc =  '[R]e[n]ame'})
 set('n', '<leader>ca' , vim.lsp.buf.code_action     , {desc =  '[C]ode [A]ction'})
 
 -- Lesser used LSP functionality
@@ -196,3 +196,15 @@ set('n', '<leader>lgb', tlscp_builtin.git_branches, {desc =  'List Git Branches'
 vim.keymap.set("n", "<leader>Gb", ":GitBlameToggle<cr>")
 
 -- end git remaps -----------------------------------------------------------
+
+
+
+
+ -- copilot remaps ------------------------------------------------------------
+vim.keymap.set("i", "<C-j>", "copilot#Next()", {expr=true, silent=true})
+vim.keymap.set("i", "<C-k>", "copilot#Previous()", {expr=true, silent=true})
+vim.keymap.set("i", "<leader><Tab>", "copilot#Accept()", {expr=true, silent=true})
+ -- end copilot remaps ---------------------------------------------------------
+
+
+

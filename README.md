@@ -90,6 +90,7 @@ Then run `:Mason` and install:
 - `<leader>ws`     : list **W**orkspace **S**ymbols
 - `<leader>sw`     : fuzzy **S**earch **W**ord under cursor in workspace
 - `<leader>sg`     : fuzzy **S**earch **G**rep in workspace
+- `<leader>r`      : [R]ename
 
 
 ## git
