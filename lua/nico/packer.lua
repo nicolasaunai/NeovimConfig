@@ -31,6 +31,7 @@ use ("sainnhe/sonokai")
 -- Git
 use('tpope/vim-fugitive')
 use('f-person/git-blame.nvim')
+use ('lewis6991/gitsigns.nvim')
 
 
 -- all these plugins are related to LSP
