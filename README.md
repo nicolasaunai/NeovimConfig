@@ -8,7 +8,7 @@
 
 ```bash
 sudo dnf install neovim
-`git clone https://github.com/nicolasaunai/neovimconf/ ~/.config/nvim`
+`git clone https://github.com/nicolasaunai/neovimconf.git ~/.config/nvim`
 `cd ~/.config/nvim/lua/nico`
 `nvim packer.lua`
 ```
