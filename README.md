@@ -6,8 +6,18 @@
 
  
 
+On Fedora:
 ```bash
 sudo dnf install neovim
+```
+
+On MacOs:
+
+```bash
+brew install neovim
+```
+
+```bash
 `git clone https://github.com/nicolasaunai/neovimconf.git ~/.config/nvim`
 git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 `cd ~/.config/nvim/lua/nico`
