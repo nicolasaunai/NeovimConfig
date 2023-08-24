@@ -2,7 +2,7 @@
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
-
+ 
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -17,12 +17,12 @@ use({
     'rose-pine/neovim',
     as = 'rose-pine',
     config = function()
-        vim.cmd('colorscheme melange')
+        vim.cmd('colorscheme rose-pine-moon')
     end
 })
 
 -- parsers for color highlighting-use
-use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
+use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})--, commit='31f608e47b838594d32a7bc42028e2cefd0ddaad'})
  --
 use { "ellisonleao/gruvbox.nvim" }
 use ("savq/melange")
@@ -147,6 +147,16 @@ use("mfussenegger/nvim-dap")
 use("mfussenegger/nvim-dap-python")
 use("rcarriga/nvim-dap-ui")
 -- use("theHamsta/nvim-dap-virtual-text")
+
+
+
+-- comments
+ use {
+     'numToStr/Comment.nvim',
+     config = function()
+         require('Comment').setup()
+     end
+ }
 
 
 end)
