@@ -16,11 +16,12 @@ use {
 use({
     'rose-pine/neovim',
     as = 'rose-pine',
+})
+use({'cocopon/iceberg.vim', as = 'iceberg',
     config = function()
-        vim.cmd('colorscheme rose-pine-moon')
+        vim.cmd('colorscheme iceberg')
     end
 })
-
 -- parsers for color highlighting-use
 use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})--, commit='31f608e47b838594d32a7bc42028e2cefd0ddaad'})
  --
@@ -64,6 +65,11 @@ use {
     {'rafamadriz/friendly-snippets'},
   }
 }
+
+
+--- linters
+use 'mfussenegger/nvim-lint'
+
 
 ----------- tree explorer
 use {

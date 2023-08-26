@@ -24,6 +24,9 @@ vim.diagnostic.config({
   severity_sort = false,
   float = {source="always"},
 })
+vim.cmd("hi DiagnosticError guifg=#ab6d79")
+vim.cmd("hi DiagnosticInfo guifg=#8c7ca6")
+vim.cmd("hi DiagnosticHint guifg=#8c7ca6")
 -- Global mappings.
 
 -- ----------------------------------------------------------------------------
