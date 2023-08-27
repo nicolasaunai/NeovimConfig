@@ -72,7 +72,7 @@ cmp.setup({
   -- see packer.lua for the plugins that come with cmp
   sources = {
     {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
+    {name = 'nvim_lua'},-- for lua_ls (lua language server)
     {name = 'luasnip'},
     {name = 'path'},
     {name = 'buffer'},
@@ -102,8 +102,8 @@ cmp.setup({
 -- line is empty it acts like a regular Tab key.
 -- Make sure you setup `cmp` after lsp-zero
 
-    ['<Tab>'] = cmp_action.tab_complete(),
-    ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+    -- ['<Tab>'] = cmp_action.tab_complete(),
+    -- ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
 
 -- Adding borders to completion menu
 -- Most people just use the preset nvim-cmp offers.
@@ -130,7 +130,7 @@ formatting = {
       -- for instance we will not see any 'Snippet' if 'luasnip' is not
       -- set as a source.
       local short_name = {
-        nvim_lsp = 'LSPSSS',
+        nvim_lsp = 'LSP',
         nvim_lua = 'nvim',
         luasnip  = 'Snippet' ,
         buffer   = 'Buffer',
