@@ -53,7 +53,6 @@ local lspcf = require('lspconfig')
 
 lspcf.pyright.setup{filetypes={ "python","py" }}
 lspcf.cmake.setup{}
-lspcf.lua_ls.setup{}
 lspcf.lua_ls.setup{
     -- the following comes from
     -- https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
