@@ -204,7 +204,10 @@ vim.keymap.set("n", "<leader>Gb", ":GitBlameToggle<cr>")
  -- copilot remaps ------------------------------------------------------------
 vim.keymap.set("i", "<C-j>", "copilot#Next()", {expr=true, silent=true})
 vim.keymap.set("i", "<C-k>", "copilot#Previous()", {expr=true, silent=true})
-vim.keymap.set("i", "<leader><Tab>", "copilot#Accept()", {expr=true, silent=true})
+
+-- the replace_keycodes = false is needed to prevent weird  characters at the end 
+-- of copilot suggestions : source is  https://github.com/orgs/community/discussions/29817#discussioncomment-4217615
+vim.keymap.set("i", "<leader><Tab>", "copilot#Accept()", {expr=true, silent=true,replace_keycodes = false})
  -- end copilot remaps ---------------------------------------------------------
 
 
