@@ -6,7 +6,7 @@ local set = vim.keymap.set
 
 
 set("n", "<leader>pf", vim.cmd.Ex)
-set("n", "n", "<leader>sq", 'ciw""<Esc>P', { desc = "Word Surround Quotes" })
+set("n", "<leader>sq", 'ciw""<Esc>P', { desc = "Word Surround Quotes" })
 
 
 -- splits ----------------------------------------------------------------------
