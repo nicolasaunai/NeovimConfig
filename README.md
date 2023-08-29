@@ -28,22 +28,6 @@ then in neovim, source the file `packer.lua` with  `:so`
 and run `PackerSync` to install all plugins
 
 
-Then run `:Mason` and install:
-
-
-- clang-format
-- clangd
-- cmake-language-server
-- cpptools
-- debugpy
-- html-lsp
-- json-lsp
-- pylint
-- pyright
-- texlab
-
-
-
 
 # Cheat Sheet
 
