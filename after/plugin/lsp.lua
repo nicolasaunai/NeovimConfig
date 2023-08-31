@@ -41,6 +41,9 @@ local lspcf = require('lspconfig')
   --    https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   lspcf.clangd.setup{
       filetypes={ "c", "cpp","hpp","h", "objc", "objcpp", "cuda", "proto" },
+      cmd= {"clangd",
+            "--offset-encoding=utf-16",
+  },
       root_dir=require('lspconfig').util.root_pattern(
           '.clangd',
           '.clang-tidy',

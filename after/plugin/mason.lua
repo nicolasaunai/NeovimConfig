@@ -1,10 +1,10 @@
 
-local ok, mason = pcall(require, "mason-lspconfig")
+local ok, mason = pcall(require, "mason-tool-installer")
 if not  ok then
-    print("Mason LSP config not found")
+    print("mason-tool-installer not found")
     return
 end
-mason.setup {
+mason.setup({
     ensure_installed = { "lua-language-server",
                          "clang-format",
                          "clangd",
@@ -15,8 +15,8 @@ mason.setup {
                          "gitlint",
                          "json-lsp",
                          "html-lsp",
-                         -- "pylint", -- seems not to work :/
                          "pyright",
                          "texlab",
+                          "pylint",
                      },
-}
+})

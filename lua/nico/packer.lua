@@ -49,6 +49,7 @@ use {
     -- mason-lspconfig is a bridge between mason and mason-lspconfig
     -- helps them working together
     {'williamboman/mason-lspconfig.nvim'},
+    {'WhoIsSethDaniel/mason-tool-installer.nvim'},
 
     -- Autocompletion
 
