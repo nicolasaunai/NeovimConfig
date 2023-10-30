@@ -13,15 +13,13 @@ require("nvim-tree").setup()
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
+    side = "left",
     adaptive_size = true,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
       },
     },
-  },
-  renderer = {
-    group_empty = true,
   },
   filters = {
     dotfiles = true,
@@ -30,15 +28,13 @@ require("nvim-tree").setup({
     enable = true,
   },
   renderer = {
+    group_empty = true,
     highlight_git = true,
     icons = {
       show = {
         git = true,
       },
     },
-  },
-  view = {
-    side = "left",
   },
 })
 
