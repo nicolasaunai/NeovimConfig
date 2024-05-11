@@ -1,2 +1,5 @@
-vim.g.powerline_loaded = 1
+
+
+
+--vim.g.powerline_loaded = 1
 require("nico")
