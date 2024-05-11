@@ -48,7 +48,7 @@ vim.opt.updatetime=300
 
 
 -- clipboard
-vim.opt.clipboard="unnamedplus"
+vim.opt.clipboard:append{'unnamedplus'}--,'unnamed'}
 
 
 -- search
