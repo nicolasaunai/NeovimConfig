@@ -19,13 +19,8 @@ brew install neovim
 
 ```bash
 `git clone https://github.com/nicolasaunai/neovimconf.git ~/.config/nvim`
-git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-`cd ~/.config/nvim/lua/nico`
-`nvim packer.lua`
 ```
 
-then in neovim, source the file `packer.lua` with  `:so`
-and run `PackerSync` to install all plugins
 
 
 
@@ -177,13 +172,5 @@ Linewise:
 - `:Mason`         : Run Mason to install/uninstall LSP, DAP, Linters, Formatters
 - `:MasonUpdate`   : Update all managed registries
 
-
-## Packer
-
-- `source ~/.config/nvim/lua/nico/packer.lua`   : source the packer config
-- `:PackerSync`     : Perform `PackerUpdate` and then `PackerCompile`
-- `PackerCompile`   : Regenerate compiled loader file
-- `PackerClean`     : Remove any disabled or unused plugins
-- `PackerUpdate`    : Clean, then update and install plugins
 
 
