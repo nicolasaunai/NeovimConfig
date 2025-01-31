@@ -54,4 +54,5 @@ vim.opt.clipboard:append{'unnamedplus'}--,'unnamed'}
 -- search
 vim.opt.ignorecase = true
 vim.opt.smartcase=true
+vim.opt.smartindent=false
 
