@@ -1,0 +1,50 @@
+
+--#region
+--
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('pyright')
+vim.lsp.enable('cmake')
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
+      vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+      vim.keymap.set('i', '<C-Space>', function()
+        vim.lsp.completion.get()
+      end)
+    end
+  end,
+})
+
+-- Diagnostics
+vim.diagnostic.config({
+  -- Use the default configuration
+  -- virtual_lines = true
+ globals={'vim'},
+  -- Alternatively, customize specific options
+  virtual_lines = {
+    -- Only show virtual line diagnostics for the current cursor line if true
+    current_line = false,
+  },
+})
+
+
+--  DIAGNOSTICS CONFIG FROM NVIM-LSPCONFIG --- https://github.com/neovim/nvim-lspconfig
+-- vim.diagnostic.config({
+--   virtual_text = {
+--     source = "always",  -- Or "if_many"
+--     prefix = '●', -- Could be '■', '▎', 'x'
+--   },
+--   signs = true,
+--   update_in_insert = false,
+--   underline = true,
+--   severity_sort = false,
+--   float = {source="always"},
+-- })
+-- vim.cmd("hi DiagnosticError guifg=#ab6d79")
+-- vim.cmd("hi DiagnosticInfo guifg=#8c7ca6")
+-- vim.cmd("hi DiagnosticHint guifg=#8c7ca6")

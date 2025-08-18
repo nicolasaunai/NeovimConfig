@@ -1,24 +1,27 @@
 
-local ok, mason = pcall(require, "mason-tool-installer")
-if not  ok then
-    print("mason-tool-installer not found")
-    return
-else
-    mason.setup({
-    ensure_installed = { "lua-language-server",
-                         "clang-format",
-                         "clangd",
-                         "cmake-language-server",
-                         "cpplint",
-                         "cpptools",
-                         "cpplint",
-                         "gitlint",
-                         "json-lsp",
-                         "html-lsp",
-                         "pyright",
-                         "texlab",
-                          "pylint",
-                     },
+return require('mason').setup( {
+opts = {
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    },
+    -- ensure_installed = { "lua-language-server",
+    --                  "clang-format",
+    --                  "clangd",
+    --                  "cmake-language-server",
+    --                  "cpplint",
+    --                  "cpptools",
+    --                  "cpplint",
+    --                  "gitlint",
+    --                  "json-lsp",
+    --                  "html-lsp",
+    --                  "pyright",
+    --                  "texlab",
+    --                   "pylint",
+    --              },
+    }
 })
 
-end

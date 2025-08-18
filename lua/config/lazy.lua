@@ -13,7 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-'nvim-lua/plenary.nvim',
 'nvim-telescope/telescope.nvim',-- tag = '0.1.1',
 {
     'rose-pine/neovim',
@@ -45,32 +44,32 @@ require("lazy").setup({
 -- 'lewis6991/gitsigns.nvim',
 
     -- LSP Support
-    {'neovim/nvim-lspconfig'},
+   -- {'neovim/nvim-lspconfig'},
 
     -- mason is a manager for lsp, linters, dap, formatters
     -- it allows to install, update, etc. them easily
-    {'williamboman/mason.nvim'},
+    {'mason-org/mason.nvim'},
 
     -- mason-lspconfig is a bridge between mason and mason-lspconfig
     -- helps them working together
-    {'williamboman/mason-lspconfig.nvim'},
-    {'WhoIsSethDaniel/mason-tool-installer.nvim'},
+   -- {'williamboman/mason-lspconfig.nvim'},
+    -- {'WhoIsSethDaniel/mason-tool-installer.nvim'},
 
     -- Autocompletion
 
     -- A completion engine plugin for neovim written in Lua.
-    {'hrsh7th/nvim-cmp'},          -- Completion sources are installed from external repositories and "sourced".
-    {'hrsh7th/cmp-buffer'},        -- nvim-cmp source for buffer words.
-    {'hrsh7th/cmp-path'},          -- nvim-cmp source for filesystem paths.
-    {'saadparwaiz1/cmp_luasnip'},  -- luasnip completion source for nvim-cmp
-    {'hrsh7th/cmp-nvim-lsp'},      -- nvim-cmp source for neovim's built-in language server client.
-    {'hrsh7th/cmp-nvim-lua'},      -- nvim-cmp source for neovim Lua API.
+    -- {'hrsh7th/nvim-cmp'},          -- Completion sources are installed from external repositories and "sourced".
+    -- {'hrsh7th/cmp-buffer'},        -- nvim-cmp source for buffer words.
+    -- {'hrsh7th/cmp-path'},          -- nvim-cmp source for filesystem paths.
+    -- {'saadparwaiz1/cmp_luasnip'},  -- luasnip completion source for nvim-cmp
+    -- {'hrsh7th/cmp-nvim-lsp'},      -- nvim-cmp source for neovim's built-in language server client.
+    -- {'hrsh7th/cmp-nvim-lua'},      -- nvim-cmp source for neovim Lua API.
 
     -- Snippets
-    {'L3MON4D3/LuaSnip'},
-    {'rafamadriz/friendly-snippets'},
+    -- {'L3MON4D3/LuaSnip'},
+    -- {'rafamadriz/friendly-snippets'},
 
-    {'VonHeikemen/lsp-zero.nvim',branch = 'v2.x'},
+    -- {'VonHeikemen/lsp-zero.nvim',branch = 'v2.x'},
 
 'mfussenegger/nvim-lint',
 "nvim-tree/nvim-web-devicons",
@@ -79,6 +78,8 @@ require("lazy").setup({
   version = "*",
   lazy = false,
   },
+
+-- neoformat plugin
 {
     "sbdchd/neoformat",
     config = function()
