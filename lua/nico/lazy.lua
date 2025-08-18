@@ -27,7 +27,7 @@ require("lazy").setup({
 },
  {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    -- build = ":TSUpdate",
     config = function ()
       local configs = require("nvim-treesitter.configs")
 
@@ -42,7 +42,7 @@ require("lazy").setup({
  ,
  {'tpope/vim-fugitive'},
 'f-person/git-blame.nvim',
-'lewis6991/gitsigns.nvim',
+-- 'lewis6991/gitsigns.nvim',
 
     -- LSP Support
     {'neovim/nvim-lspconfig'},
@@ -121,6 +121,9 @@ require("lazy").setup({
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
       -- See Configuration section for options
+    sticky = {
+                '#files',
+            }
     },
     -- See Commands section for default commands if you want to lazy load on them
   },
