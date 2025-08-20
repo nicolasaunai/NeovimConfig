@@ -1,7 +1,20 @@
 
---#region
---
 
+local lspconfig= require('lspconfig')
+lspconfig.lua_ls.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }, -- Recognize 'vim' as a global variable
+      },
+    },
+  },
+})
+
+
+--  configuration of all servers is done
+--  in lspconfig we just have to call enable() here
+--  for the servers we actually want.
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
@@ -24,13 +37,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.diagnostic.config({
   -- Use the default configuration
   -- virtual_lines = true
- globals={'vim'},
   -- Alternatively, customize specific options
   virtual_lines = {
     -- Only show virtual line diagnostics for the current cursor line if true
     current_line = false,
   },
 })
+
 
 
 --  DIAGNOSTICS CONFIG FROM NVIM-LSPCONFIG --- https://github.com/neovim/nvim-lspconfig
