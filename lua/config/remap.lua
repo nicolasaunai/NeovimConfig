@@ -1,6 +1,5 @@
 
 
-vim.g.mapleader = " "
 
 local set = vim.keymap.set
 

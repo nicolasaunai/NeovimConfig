@@ -1,16 +1,5 @@
 
 
-local lspconfig= require('lspconfig')
-lspconfig.lua_ls.setup({
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }, -- Recognize 'vim' as a global variable
-      },
-    },
-  },
-})
-
 
 --  configuration of all servers is done
 --  in lspconfig we just have to call enable() here
