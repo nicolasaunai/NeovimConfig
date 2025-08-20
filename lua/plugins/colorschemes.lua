@@ -8,8 +8,8 @@ return {
 },
 {
 'cocopon/iceberg.vim', as = 'iceberg',
-    config = function()
-        vim.cmd('colorscheme iceberg')
-    end
+    -- config = function()
+    --     vim.cmd('colorscheme iceberg')
+    -- end
 }
 }

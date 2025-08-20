@@ -1,7 +1,9 @@
 return{
 
-"https://github.com/github/copilot.vim",
-
+    {"https://github.com/github/copilot.vim",
+        config= function()
+            vim.g.copilot_no_tab_map = true
+        end},
 {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = {
