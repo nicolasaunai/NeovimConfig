@@ -1,13 +1,8 @@
-
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
+-- nvim-tree requires netrw to be disabled, otherwise they conflict when
+-- opening a directory. Must happen before nvim-tree loads.
+vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
 
--- set termguicolors to enable highlight groups
+-- termguicolors is required for nvim-tree's git highlight colours and icons
+-- to render correctly in terminals that support true colour.
 vim.opt.termguicolors = true
-
--- OR setup with some options
--- require("nvim-tree").setup({
--- })
-
-

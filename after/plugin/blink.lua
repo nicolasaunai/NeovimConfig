@@ -1,35 +1,7 @@
--- print("blink blabal")
--- return
--- {
---   dependencies = { 'saghen/blink.cmp' },
+-- This file is intentionally empty. blink.cmp is fully configured in
+-- lua/plugins/lsp.lua via its lazy spec opts = {...}.
 --
---   -- example using `opts` for defining servers
---   opts = {
---     servers = {
---     lua_ls = {},
---     clangd = {},
---     pyright = {},
---     cmake={}
---     }
---   },
---   -- config = function(_, opts)
---   --   local lspconfig = require('lspconfig')
---   --   for server, config in pairs(opts.servers) do
---   --     -- passing config.capabilities to blink.cmp merges with the capabilities in your
---   --     -- `opts[server].capabilities, if you've defined it
---   --     config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
---   --     lspconfig[server].setup(config)
---   --   end
---   -- end
---
---  -- example calling setup directly for each LSP
---   config = function()
---     local capabilities = require('blink.cmp').get_lsp_capabilities()
---     local lspconfig = require('lspconfig')
---
---     lspconfig['lua_ls'].setup({ capabilities = capabilities })
---     lspconfig['cmake'].setup({ capabilities = capabilities })
---     lspconfig['clangd'].setup({ capabilities = capabilities })
---     lspconfig['pyright'].setup({ capabilities = capabilities })
---   end
--- }
+-- The original attempt to configure blink.cmp here (via a separate
+-- lspconfig loop) was abandoned because it conflicted with the per-server
+-- setup in lua/plugins/lsp.lua and with vim.lsp.enable() in lua/config/lsp.lua.
+-- Keeping the single source of truth in the lazy spec is cleaner.

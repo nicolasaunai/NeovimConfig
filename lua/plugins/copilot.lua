@@ -1,22 +1,29 @@
-return{
+return {
 
-    {"https://github.com/github/copilot.vim",
-        config= function()
-            vim.g.copilot_no_tab_map = true
-        end},
-{
+  -- copilot.vim: the official GitHub Copilot plugin.
+  -- copilot_no_tab_map=true disables the default Tab-to-accept so it doesn't
+  -- conflict with blink.cmp's completion menu. Accept is remapped to
+  -- <leader><Tab> in remap.lua. Cycle suggestions with <C-j>/<C-k>.
+  {
+    "https://github.com/github/copilot.vim",
+    config = function()
+      vim.g.copilot_no_tab_map = true
+    end,
+  },
+
+  -- CopilotChat.nvim: a chat interface for Copilot inside Neovim.
+  -- '#files' in sticky makes the current workspace files available to the
+  -- chat context automatically.
+  {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = {
-      { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
-      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+      { "github/copilot.vim" },
+      { "nvim-lua/plenary.nvim", branch = "master" },  -- async utilities
     },
-    build = "make tiktoken", -- Only on MacOS or Linux
+    build = "make tiktoken",  -- builds the tiktoken tokenizer for accurate token counting
     opts = {
-      -- See Configuration section for options
-    sticky = {
-                '#files',
-            }
+      sticky = { '#files' },
     },
-    -- See Commands section for default commands if you want to lazy load on them
   },
+
 }

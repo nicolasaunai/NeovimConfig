@@ -1,11 +1,11 @@
+-- Colorscheme selection. Both schemes are installed in lua/plugins/colorschemes.lua.
+-- Switch by passing a different name to ColorMyPencils().
+-- Available: "rose-pine", "rose-pine-main", "rose-pine-moon", "rose-pine-dawn", "iceberg"
 
-function ColorMyPencils(color)
-    color = color or "rose-pine"
-    vim.cmd.colorscheme(color)
-    vim.o.background = "dark" -- or "light" for light mode
+local function ColorMyPencils(color)
+  color = color or "rose-pine"
+  vim.cmd.colorscheme(color)
+  vim.o.background = "dark"
 end
 
 ColorMyPencils("rose-pine-main")
---ColorMyPencils("iceberg")
---ColorMyPencils("sonokai")
---vim.g.sonokai_style="expresso"
