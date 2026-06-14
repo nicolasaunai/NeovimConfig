@@ -57,7 +57,7 @@ dap.configurations.c = dap.configurations.cpp
 
 -- PYTHON
 -- : https://github.com/mfussenegger/nvim-dap-python
-dap_python_ok, dap_python = pcall(require, "dap-python")
+local dap_python_ok, dap_python = pcall(require, "dap-python")
 if not dap_python_ok then
     print("dap-python not found")
     return
