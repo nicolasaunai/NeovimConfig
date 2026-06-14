@@ -1,9 +1,17 @@
 
+local lspconfig = require('lspconfig')
 
+lspconfig.clangd.setup({
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--completion-detail",
+    "--offset-encoding=utf-16",
+  },
+})
 
---  configuration of all servers is done
---  in lspconfig we just have to call enable() here
---  for the servers we actually want.
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
@@ -19,34 +27,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.completion.get()
       end)
     end
+    if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+      vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
+    end
   end,
 })
 
--- Diagnostics
 vim.diagnostic.config({
-  -- Use the default configuration
-  -- virtual_lines = true
-  -- Alternatively, customize specific options
   virtual_lines = {
-    -- Only show virtual line diagnostics for the current cursor line if true
     current_line = false,
   },
 })
-
-
-
---  DIAGNOSTICS CONFIG FROM NVIM-LSPCONFIG --- https://github.com/neovim/nvim-lspconfig
--- vim.diagnostic.config({
---   virtual_text = {
---     source = "always",  -- Or "if_many"
---     prefix = '●', -- Could be '■', '▎', 'x'
---   },
---   signs = true,
---   update_in_insert = false,
---   underline = true,
---   severity_sort = false,
---   float = {source="always"},
--- })
--- vim.cmd("hi DiagnosticError guifg=#ab6d79")
--- vim.cmd("hi DiagnosticInfo guifg=#8c7ca6")
--- vim.cmd("hi DiagnosticHint guifg=#8c7ca6")

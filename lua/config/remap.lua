@@ -165,6 +165,9 @@ set('n', '<leader>wl' , function() print(vim.inspect(vlb.list_workspace_folders(
 
 set('n', 'K'        , vlb.hover         , {desc = 'Hover Documentation'})
 set('n', '<leader>d', vlb.signature_help, {desc = 'Signature Documentation'})
+set('n', '<leader>ih', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, {desc = 'Toggle Inlay Hints'})
 -- end lsp remaps -----------------------------------------------------------
 
 

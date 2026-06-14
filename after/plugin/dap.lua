@@ -68,11 +68,8 @@ dap_python.setup('~/.virtualenvs/debugpy/bin/python')
 
 
 
--- this comes from https://github.com/theHamsta/nvim-dap-virtual-text
--- to have values of variables in the editor
---require("nvim-dap-virtual-text").setup {
---  commented = true,
---}
+-- values of variables shown inline while debugging
+require("nvim-dap-virtual-text").setup { commented = false }
 
 
 
