@@ -9,13 +9,15 @@ local lspconfig = require('lspconfig')
 --   Use) rather than blindly inserting the first match.
 -- --offset-encoding=utf-16: required for blink.cmp compatibility; without this,
 --   multi-byte characters (e.g. UTF-8 source) cause off-by-one completion edits.
+-- --completion-style=detailed: one completion item per overload, with full
+--   type info (matches clangd's default, kept explicit for clarity).
 lspconfig.clangd.setup({
   cmd = {
     "clangd",
     "--background-index",
     "--clang-tidy",
     "--header-insertion=iwyu",
-    "--completion-detail",
+    "--completion-style=detailed",
     "--offset-encoding=utf-16",
   },
 })
